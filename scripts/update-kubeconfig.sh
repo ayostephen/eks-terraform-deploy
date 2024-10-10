@@ -8,6 +8,8 @@
 #     echo "Error: Dominion-cluster does not exist"
 # fi
 
+#!/bin/bash
+
 # Variables (replace with your values or environment variables)
 CLUSTER_NAME="dominion-cluster"
 REGION="region us-west-2"
