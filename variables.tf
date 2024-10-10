@@ -58,26 +58,26 @@ variable "env_name" {
 # VPC Variables
 ################################################################################
 
-variable "vpc_id" {
-  description = "VPC ID which Load balancers will be  deployed in"
-  type        = string
-}
+# variable "vpc_id" {
+#   description = "VPC ID which Load balancers will be  deployed in"
+#   type        = string
+# }
 
-variable "private_subnets" {
-  description = "A list of private subnets"
-  type        = list(string)
-}
+# variable "private_subnets" {
+#   description = "A list of private subnets"
+#   type        = list(string)
+# }
 
 ################################################################################
 # AWS SSO Variables
 ################################################################################
 
-# variable "sso_admin_group_id" {
-#   description = "AWS_SSO Admin Group ID"
-#   type        = string
-#   sensitive   = true
-#   default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
-# }
+variable "sso_admin_group_id" {
+  description = "AWS_SSO Admin Group ID"
+  type        = string
+  sensitive   = true
+  default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
+}
 
 variable "ami_id" {
   description = "The AMI ID for the instances"
