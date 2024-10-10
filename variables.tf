@@ -9,9 +9,9 @@ variable "main-region" {
 }
 
 
-################################################################################
-# EKS Cluster Variables
-################################################################################
+# ################################################################################
+# # EKS Cluster Variables
+# ################################################################################
 
 variable "cluster_name" {
   type    = string
@@ -23,9 +23,9 @@ variable "rolearn" {
   default     = "arn:aws:iam::322266404742:role/terraform-create-role"
 }
 
-################################################################################
-# ALB Controller Variables
-################################################################################
+# ################################################################################
+# # ALB Controller Variables
+# ################################################################################
 
 variable "env_name" {
   type    = string
@@ -58,54 +58,54 @@ variable "env_name" {
 # VPC Variables
 ################################################################################
 
-# variable "vpc_id" {
-#   description = "VPC ID which Load balancers will be  deployed in"
-#   type        = string
-# }
+variable "vpc_id" {
+  description = "VPC ID which Load balancers will be  deployed in"
+  type        = string
+}
 
-# variable "private_subnets" {
-#   description = "A list of private subnets"
-#   type        = list(string)
-# }
+variable "private_subnets" {
+  description = "A list of private subnets"
+  type        = list(string)
+}
 
 ################################################################################
 # AWS SSO Variables
 ################################################################################
 
-variable "sso_admin_group_id" {
-  description = "AWS_SSO Admin Group ID"
-  type        = string
-  sensitive   = true
-  default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
-}
+# variable "sso_admin_group_id" {
+#   description = "AWS_SSO Admin Group ID"
+#   type        = string
+#   sensitive   = true
+#   default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
+# }
 
 variable "ami_id" {
   description = "The AMI ID for the instances"
   type        = string
-  default     = "ami-03c983f9003cb9cd1"
+  default     = "ami-0b8c6b923777519db"
 }
 
 variable "instance_type" {
   description = "The instance type for the instances"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
 
 
 variable "key_name" {
   description = "The key name for the instances"
   type        = string
-  default     = "DevOps_key"
+  default     = "team-key"
 }
 
-# variable "s3_bucket" {
-#   description = "The name of the S3 bucket for storing Terraform state"
-#   type        = string
-#   default     = "terraform-state-bucket-fusi"
-# }
+variable "s3_bucket" {
+  description = "The name of the S3 bucket for storing Terraform state"
+  type        = string
+  default     = "team-terraform-state-bucket"
+}
 
-# variable "dynamodb_table" {
-#   description = "The name of the DynamoDB table for state locking"
-#   type        = string
-#   default     = "terraform-lock-table"
-# }
+variable "dynamodb_table" {
+  description = "The name of the DynamoDB table for state locking"
+  type        = string
+  default     = "terraform-lock-table"
+}
